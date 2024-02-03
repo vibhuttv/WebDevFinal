@@ -1,0 +1,35 @@
+
+.Postheading
+{
+    position: relative;
+    top: 150px;
+    left: 125px;
+
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 140%;
+}
+
+.Feedheading
+{
+    position: relative;
+    top: 20px;
+    left: 20px;
+
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 140%;
+}
+
+#char-count
+{
+    position: relative;
+    top: 50px;
+    left: 20px;
+}

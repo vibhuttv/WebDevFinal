@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <header style="background: #FFFFFF; border-bottom: 1px solid #D6DEE5; height: 66px; width: 100%; position: fixed; top: 0; left: 0; z-index: 1000;">
+        <!-- Content for the top heading bar-->
+        <div style="position: fixed; top: 15px; left: 50px; height: 66px; width: 66px;">
+            <img src="SST_Logo.png" alt="Description" style="width: 117px; height: auto;">
+        </div>
+        <div style="position: fixed; top: 15px; right: 220px; height: 66px; width: 66px;">
+            <img src="scaler-social.png" alt="Description" style="width: 234px; height: auto;">
+        </div>
+    </header>
+
+
+
+    <main style="display: flex; background: #ECF8FF; margin-top: 66px; padding-left: 0; padding-bottom: 0;">
+        <!-- Left block -->
+        <section style="background: #ECF8FF; width: 768px; height: calc(100vh - 66px); box-sizing: border-box; padding-left: 0; padding-bottom: 0;">
+            <!-- Content for the left block -->
+            
+    
+            <div class="Postheading">Post your thoughts here</div>
+            
+            <div style="position: relative; height: 100%; display: flex; justify-content: center; align-items: center;">
+
+                <div style="margin-top: 10px; width: 521px; height: 248px; background-color: #FFFFFF; border-radius: 8px;">
+                    
+                    <div style="position: relative; width: 473px; top: 12px; left: 12px; height: 126px; background-color: #FFFFFF;">
+                        <img src="profile_image.png" alt="Logo" style="width: 50px; height: 50px; float: left;">
+                        <textarea oninput="this.value = this.value.slice(0, 100); document.getElementById('char-count').textContent = this.value.length + ' / 100';" maxlength="100" style="height: 100%; width: calc(473px - 60px); margin-left: 0px; text-align: left; vertical-align: top; border: none; resize: none;" placeholder="Type your thoughts here"></textarea>
+
+                        <div id="char-count" style="text-align: left;">0 / 100</div>
+                        <button style="position: relative; top: 20px; left: 400px; border-radius: 20px; background-color: #007BFF; color: white; padding: 10px 30px; border: none; cursor: pointer;">
+                            Post
+                        </button>
+                </div>
+
+            
+
+
+            </div>
+
+        </section>
+
+
+        <!-- Right block -->
+        <section style="flex-grow: 1; height: calc(100vh - 66px); background: #FFFFFF; padding-left: 0; padding-bottom: 0;">
+            <!-- Content for the right block -->
+            <span class ="Feedheading">Your feed</span>
+
+        </section>
+    </main>
+
+    
+
+
+
+    
+    <!-- <script src="Scriptjava.js"></script> -->
+
+    <script>
+        // document.addEventListener('DOMContentLoaded', (event) => {
+//     const button = document.createElement('button');
+//     button.textContent = 'Add Custom Box';
+//     button.addEventListener('click', addCustomBox);
+//     document.body.appendChild(button);
+// });
+
+// function addCustomBox() {
+//     const feedSection = document.querySelector('.Feedsection'); // Adjust
+//     const box = document.createElement('div');
+//     box.classList.add('custom-box');
+//     feedSection.appendChild(box);
+// }
+
+
+document.addEventListener('DOMContentLoaded', (event) => {
+    const postButton = document.querySelector('button');
+    const feedSection = document.querySelector('.Feedheading');
+    
+    postButton.addEventListener('click', function() {
+  const userPost = document.querySelector('textarea').value;
+  const postContainer = document.createElement('div');
+  postContainer.style.cssText = `
+    border: 1px solid #D3D3D3;
+    width: 521px;
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    margin-top: 10px;
+    padding: 12px;
+    box-sizing: border-box;
+    flex-direction: column;
+  `;
+
+  const userProfile = document.createElement('div');
+  userProfile.style.cssText = `
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px; /* space between profile and text */
+  `;
+
+  const profileImage = document.createElement('img');
+  profileImage.src = 'profile_image.png'; // Replace with the path to the user's profile image
+  profileImage.alt = 'User Profile';
+  profileImage.style.cssText = `
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 12px; /* space between profile image and text */
+  `;
+
+  const userName = document.createElement('div');
+  const userUsername = document.createElement('div');
+  userName.textContent = 'Vibhu  '; // Replace with the actual user name
+  userUsername.textContent = '@ByVibhu'; // Replace with the actual username
+  userUsername.style.cssText = `
+    <!-- color: #808080; /* light grey color for username */
+    font-size: 0.8em;
+  `;
+
+  userProfile.appendChild(profileImage);
+  userProfile.appendChild(userName);
+  userProfile.appendChild(userUsername);
+  postContainer.appendChild(userProfile);
+
+  const postText = document.createElement('div');
+  postText.textContent = userPost;
+  postText.style.cssText = `
+    width: 100%; /* full width of the container */
+    min-height: 50px; /* minimum height */
+    word-wrap: break-word;
+  `;
+
+  const editButton = document.createElement('button');
+  editButton.textContent = 'Edit';
+  editButton.style.cssText = `
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  `;
+
+  userProfile.style.position = 'relative';
+  userProfile.appendChild(editButton);
+
+  postContainer.appendChild(postText);
+  feedSection.appendChild(postContainer);
+});
+  });
+</script> -->
+</body>
+</html>
